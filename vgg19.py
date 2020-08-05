@@ -34,7 +34,7 @@ class VGG19:
         self.net['pool5'] = Pool2DLayer(self.net['conv5_4'], 2, mode='average_exc_pad')
 
     def load_params(self, weights_filename):
-        values = pickle.load(open(weights_filename))['param values']
+        values = pickle.load(open(weights_filename, 'rb'), encoding='latin-1')['param values']
         set_all_param_values(self.net['pool5'], values)
 
     def get_layers(self, layer_names):
