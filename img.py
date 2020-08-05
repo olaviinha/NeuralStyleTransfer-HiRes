@@ -2,7 +2,7 @@ import numpy as np
 
 import skimage.transform
 from lasagne.utils import floatX
-from scipy.misc import imsave
+import imageio
 
 import warnings
 with warnings.catch_warnings():
@@ -12,7 +12,7 @@ plt.interactive(False)
 
 
 def save_vgg_to_image_file(image_path, x):
-    imsave(image_path, vgg_input_to_image(x))
+    imageio.imwrite(image_path, vgg_input_to_image(x))
 
 
 mean_channel_values = np.array([103.939, 116.779, 123.68]).reshape((3, 1, 1))
