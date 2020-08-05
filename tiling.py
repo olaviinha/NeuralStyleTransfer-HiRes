@@ -330,11 +330,11 @@ if __name__ == '__main__':
 
     result = doctest.testmod()
     if result.failed > 0:
-        print "Failed:", result
+        print("Failed:", result)
         import sys
 
         sys.exit(1)
     else:
-        print "Success:", result
+        print("Success:", result)
 
 
